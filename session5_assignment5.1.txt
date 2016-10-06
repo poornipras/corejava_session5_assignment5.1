@@ -1,0 +1,145 @@
+package find;
+
+import java.util.*;
+abstract public class Figure {
+double dim1;
+
+abstract void findArea();
+abstract void findPerimeter();
+
+void getvalues()
+{
+	System.out.println("Enter the values:");
+}
+}
+
+class circle extends Figure
+{
+static double pi=3.14;
+double r;
+	circle(double radius)
+	{
+		this.r=radius;
+	}
+	
+	void getvalues()
+	{
+		Scanner c=new Scanner(System.in);
+		System.out.print("Enter the radius of the Circle:");
+		r=c.nextDouble();
+	}
+	void findArea()
+	{
+		
+		System.out.println("Area of circle is:" +pi*r*r);
+	}
+	void findPerimeter() 
+	{
+		System.out.println("Perimeter of Circle:"+2*pi*r);
+	}
+	
+}
+
+class rectangle extends Figure
+{
+
+	double l,b;
+	
+	rectangle(double length,double breadth)
+	{
+		this.l=length;
+		this.b=breadth;
+	}
+	
+	void getvalues()
+	{
+		Scanner r=new Scanner(System.in);
+		System.out.println("--------------------------------------------");
+		System.out.print("Enter the length of the Rectangle:");
+		
+		l=r.nextDouble();
+		System.out.print("Enter the breadth of the Rectangle:");
+		b=r.nextDouble();	
+		
+	}
+	void findArea()
+	{
+	System.out.println("Area of Rectangle:"+l*b);	
+		
+	}
+
+	
+	void findPerimeter() {
+	System.out.println("Perimeter of Rectangle:" + 2* (l+b));
+	System.out.println("---------------------------------------------");
+		
+	}
+	
+}
+
+class triangle extends Figure
+{
+
+	double base,height;
+	
+	triangle(double b,double h,double dim)
+	{
+		this.base=b;
+		this.height=h;
+		this.dim1=dim;
+	}
+	
+	void getvalues()
+	{
+		Scanner t=new Scanner(System.in);
+		System.out.print("Enter the side1 of the Triangle:");
+		base=t.nextDouble();
+		System.out.print("Enter the side2 of the Triangle:");
+		height=t.nextDouble();
+		System.out.print("Enter the side3 of the Triangle:");
+		dim1=t.nextDouble();
+	}
+	
+	void findArea() {
+		
+		System.out.println("Area of Triangle:" + base*height*0.5);
+		
+	}
+
+	void findPerimeter() 
+	{
+	System.out.println("Perimeter of Triangle:" + (dim1+base+height));
+	System.out.println("-----------------------------------------------");
+		
+	}
+	
+}
+
+
+
+
+package find;
+
+public class getvalues {
+	public static void main(String[] args)
+	{
+		circle c=new circle(8);
+		c.getvalues();
+		c.findArea();
+		c.findPerimeter();
+		
+		rectangle r=new rectangle(5,6);
+		r.getvalues();
+		r.findArea();
+		r.findPerimeter();
+		
+		triangle t=new triangle(7,8,7);
+		t.getvalues();
+				
+		t.findArea();
+		t.findPerimeter();		
+	}
+		
+	}
+	
+
